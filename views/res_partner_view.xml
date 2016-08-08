@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+		<record model="ir.ui.view" id="ms_partner_star_view_partner_form">
+	    	<field name="name">res.partner.form_inherit</field>
+	    	<field name="model">res.partner</field>
+	    	<field name="inherit_id" ref="ms_core.ms_core_view_partner_form"/>
+	    	<field name="arch" type="xml">
+				
+<!-- Ajout du Ranking dans Misyl_box  -->
+				<div name="misyl_box" position="inside">
+					<div id="misyl_partner_ranking">
+						RANKING <br/> <field class = "oe_inline" name="z_ranking"/>						
+					</div>
+				</div>
+				
+<!-- Ajout du champs de Ranking au dessus du Tel  -->
+				<xpath expr="//field[@name='phone']" position="before">
+					<field name="x_ranking"/>
+				</xpath>
+			
+				
+			</field>        
+        </record>        
+    </data>
+</openerp>
+
+
+

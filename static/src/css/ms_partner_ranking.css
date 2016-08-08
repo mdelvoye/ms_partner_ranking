@@ -1,0 +1,13 @@
+#misyl_partner_ranking {
+	float:left;
+	width:100px;
+	text-align: center;
+	margin-right : 10px;
+	padding : 5px;
+	border : 1px solid #CCCCCC;
+}
+
+#misyl_partner_ranking p{
+	margin : 0px;
+    padding : 0px;
+}
