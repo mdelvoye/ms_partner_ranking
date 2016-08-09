@@ -10,7 +10,7 @@
 <!-- Ajout du Ranking dans Misyl_box  -->
 				<div name="misyl_box" position="inside">
 					<div id="misyl_partner_ranking">
-						RANKING <br/> <field class = "oe_inline" name="z_ranking"/>						
+						<label for="z_ranking"/> <br/> <field class = "oe_inline" name="z_ranking"/>						
 					</div>
 				</div>
 				

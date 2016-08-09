@@ -12,6 +12,7 @@ class res_partner(models.Model):
                                   ('3', '3'),
                                   ('4', '4'),
                                   ('5', '5'),
+                                  ('WARNING', 'warning'),
                                   ], 'Ranking')
     
     z_ranking = fields.Html(string='Ranking', compute='_get_ranking', readonly=True)
@@ -20,7 +21,8 @@ class res_partner(models.Model):
     @api.depends('x_ranking')
     def _get_ranking(self):
         starOff = "<span><img src='/web/static/src/img/icons/star-off.png' width='16' height='16' class='oe_dashboard_selected_layout'/></span>"
-        starOn = "<span><img src='/web/static/src/img/icons/star-on.png' width='16' height='16' class='oe_dashboard_selected_layout'/></span>"
+        starOn  = "<span><img src='/web/static/src/img/icons/star-on.png' width='16' height='16' class='oe_dashboard_selected_layout'/></span>"
+        warning = "<span><img src='/web/static/src/img/icons/gtk-dialog-warning.png' width='16' height='16' class='oe_dashboard_selected_layout'/></span>" 
         
         if self.x_ranking=='1':
             html=starOn + starOff + starOff + starOff+ starOff 
@@ -30,6 +32,10 @@ class res_partner(models.Model):
             html=starOn + starOn + starOn +  starOff+ starOff 
         elif self.x_ranking=='4':   
             html=starOn + starOn + starOn +  starOn+ starOff 
+        elif self.x_ranking=='5':   
+            html=starOn + starOn + starOn +  starOn+ starOn     
+        elif self.x_ranking=='WARNING':   
+            html=warning +" " +warning +" "+  warning     
         else: 
             html=starOff + starOff + starOff  + starOff+ starOff 
 
